@@ -7,6 +7,7 @@ import { DevicesTabContent } from "./DevicesTabContent";
 import { InsightsTabContent } from "./InsightsTabContent";
 import { SettingsPage } from "./SettingsPage";
 import { energyStats, usageData, devices, notifications } from "./mockData";
+import { EnergyStat } from "./types";
 
 export function Dashboard() {
   const [activeTab, setActiveTab] = useState("overview");
@@ -48,7 +49,7 @@ export function Dashboard() {
         
         <TabsContent value="overview">
           <OverviewTabContent 
-            stats={energyStats}
+            stats={energyStats as EnergyStat[]}
             usageData={usageData}
             devices={devices}
             toggleDevice={toggleDevice}

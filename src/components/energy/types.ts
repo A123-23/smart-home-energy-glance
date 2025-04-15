@@ -28,3 +28,14 @@ export interface Notification {
   type: "warning" | "info" | "alert" | "success";
   isRead: boolean;
 }
+
+export type EnergyTrend = "up" | "down" | "neutral";
+
+export interface EnergyStat {
+  title: string;
+  value: string;
+  description: string;
+  icon: LucideIcon;
+  trend: EnergyTrend;
+  trendValue: string;
+}

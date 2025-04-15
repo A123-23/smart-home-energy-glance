@@ -1,21 +1,13 @@
-
 import { useState } from "react";
 import { AlertTriangle, ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { EnergyStatCard } from "./EnergyStatCard";
 import { EnergyUsageChart } from "./EnergyUsageChart";
 import { DeviceCard } from "./DeviceCard";
-import { DataPoint, Device } from "./types";
+import { DataPoint, Device, EnergyStat } from "./types";
 
 interface OverviewTabContentProps {
-  stats: {
-    icon: any;
-    title: string;
-    value: string;
-    description: string;
-    trend: "up" | "down" | "neutral";
-    trendValue: string;
-  }[];
+  stats: EnergyStat[];
   usageData: DataPoint[];
   devices: Device[];
   toggleDevice: (id: string, newState: boolean) => void;

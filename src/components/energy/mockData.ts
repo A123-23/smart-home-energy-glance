@@ -11,7 +11,7 @@ import {
   Gauge,
   Droplets,
 } from "lucide-react";
-import { DataPoint, Device, Notification } from "./types";
+import { DataPoint, Device, Notification, EnergyStat } from "./types";
 
 // Mock data for energy usage chart
 export const usageData: DataPoint[] = [
@@ -121,7 +121,7 @@ export const notifications: Notification[] = [
 ];
 
 // Energy stats for the dashboard
-export const energyStats = [
+export const energyStats: EnergyStat[] = [
   {
     title: "Today's Usage",
     value: "8.3 kWh",

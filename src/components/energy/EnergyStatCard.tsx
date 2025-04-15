@@ -2,13 +2,14 @@
 import { cn } from "@/lib/utils";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { LucideIcon } from "lucide-react";
+import { EnergyTrend } from "./types";
 
 interface EnergyStatCardProps {
   title: string;
   value: string | number;
   description?: string;
   icon?: LucideIcon;
-  trend?: "up" | "down" | "neutral";
+  trend?: EnergyTrend;
   trendValue?: string;
   className?: string;
   onClick?: () => void;
