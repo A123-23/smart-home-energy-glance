@@ -28,6 +28,7 @@ import { EnergyStatCard } from "./EnergyStatCard";
 import { EnergyUsageChart } from "./EnergyUsageChart";
 import { DeviceCard } from "./DeviceCard";
 import { NotificationItem } from "./NotificationItem";
+import { SettingsPage } from "./SettingsPage";
 
 // Mock data for energy usage chart
 const usageData = [
@@ -141,6 +142,7 @@ export function Dashboard() {
   const [activeTab, setActiveTab] = useState("overview");
   const [showAllDevices, setShowAllDevices] = useState(false);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
   
   const displayedDevices = showAllDevices ? devices : devices.slice(0, 3);
   
@@ -158,6 +160,10 @@ export function Dashboard() {
     console.log(`Mark notification ${id} as read`);
     // In a real app, this would update the notification state
   };
+
+  if (showSettings) {
+    return <SettingsPage onBack={() => setShowSettings(false)} />;
+  }
 
   return (
     <div className="flex flex-col w-full max-w-[1200px] mx-auto p-4 sm:p-6 space-y-6">
@@ -178,7 +184,12 @@ export function Dashboard() {
             Notifications
             <Badge className="ml-1 bg-energy-blue text-white">{notifications.filter(n => !n.isRead).length}</Badge>
           </Button>
-          <Button variant="ghost" size="icon" className="h-9 w-9">
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="h-9 w-9"
+            onClick={() => setShowSettings(true)}
+          >
             <Settings className="h-4 w-4" />
           </Button>
           
