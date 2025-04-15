@@ -99,3 +99,51 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .energy-card {
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-all duration-300;
+  }
+  
+  .energy-card-gradient {
+    @apply bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900;
+  }
+  
+  .energy-saving {
+    @apply text-energy-green-dark;
+  }
+  
+  .energy-warning {
+    @apply text-energy-yellow-dark;
+  }
+  
+  .energy-danger {
+    @apply text-energy-red-dark;
+  }
+}
+
+@keyframes pulse-gentle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-pulse-gentle {
+  animation: pulse-gentle 2s infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
